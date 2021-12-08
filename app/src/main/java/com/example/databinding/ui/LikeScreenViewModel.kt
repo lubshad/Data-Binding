@@ -5,6 +5,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 
 class LikeScreenViewModel: ViewModel() {
+
+    val firstName = "Lubshad"
+    val lastName = "Pattarathil"
+
+
     fun like() {
         likes.value = (likes.value ?: 0)+1
     }
