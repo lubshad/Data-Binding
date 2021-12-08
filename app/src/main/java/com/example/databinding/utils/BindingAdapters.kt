@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import android.widget.ProgressBar
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.example.databinding.R
@@ -16,6 +17,11 @@ fun popularityDrawable(view: ImageView, popularity: Popularity) {
     val drawable = getDrawablePopularity(popularity, view.context)
     view.setImageDrawable(drawable)
     view.imageTintList = ColorStateList.valueOf(color)
+}
+
+@BindingAdapter(value = ["app:progressScaled", "app:max"] , requireAll = true)
+fun setProgressBar(progressBar: ProgressBar, likes:Int, max:Int) {
+progressBar.progress = ((likes * max) /5).coerceAtMost(max)
 }
 
 

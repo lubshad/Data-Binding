@@ -91,6 +91,8 @@
             android:layout_height="wrap_content" />
 
         <ProgressBar
+            app:progressScaled="@{viewModel.likes}"
+            app:max="@{100}"
             android:id="@+id/progress_horizontal"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_marginTop="10dp"
